@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<style>
+  /* Dutch-flag accent colors */
+  :root { --nl-red: #AE1C28; --nl-white: #ffffff; --nl-blue: #21468B; }
+
+  /* Thin red–white–blue stripe across the top */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(
+      to bottom,
+      var(--nl-red) 0 33.33%,
+      var(--nl-white) 33.33% 66.66%,
+      var(--nl-blue) 66.66% 100%
+    );
+    z-index: 1040;
+  }
+
+  /* Red underline accent beneath each section heading */
+  .section-heading::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin: 18px auto 0;
+    background: var(--nl-red);
+    border-radius: 2px;
+  }
+</style>
+{% include navheader.html %}
+
+{% include about.html %}
+{% include services.html %}
+{% include contact.html %}

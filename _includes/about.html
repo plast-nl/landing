@@ -1,0 +1,20 @@
+<!-- About -->
+{% assign a = site.data.sitetext[site.locale].about %}
+<section class="page-section" id="{{ a.section | default: "about" }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">{{ a.title | default: "Про нас" }}</h2>
+        {%- if a.text and a.text != "" -%}
+        <h3 class="section-subheading text-muted">{{ a.text }}</h3>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="large text-muted">{{ a.body | markdownify }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End About -->

@@ -1,0 +1,66 @@
+# Site text for Plast — Oekraïense Scouts in Nederland
+# How to use: {{ site.data.sitetext[site.locale].<var_name> }}
+
+en: &DEFAULT_EN
+  header:
+    title: "Українська скаутська організація в Нідерландах"
+    text: ""
+    button: ""
+    buttonlink: "#about"
+
+  about:
+    title: "Про нас"
+    text: "" # explicit empty to override theme's English default
+    body: >
+      **Пласт** — це українська скаутська організація, що має понад столітню
+      історію та діє більш ніж у 20 країнах світу. Наша діяльність ґрунтується
+      на засадах самовиховання, християнської моралі та любові до України.
+
+
+      Осередок **Пласту в Нідерландах** об'єднує українські родини та молодь,
+      які хочуть зберегти рідну мову й культуру, знайти друзів і разом зростати.
+      Через гру, пригоди, табори та мандрівки ми допомагаємо дітям і молоді
+      ставати впевненими, відповідальними та небайдужими людьми.
+
+
+      Приєднуйся до нашої спільноти — тут завжди раді новим друзям!
+    section: about
+
+  services:
+    title: "Наша місія"
+    text: "Місія Пласту — сприяти всебічному патріотичному вихованню та самовдосконаленню молоді на засадах християнської моралі — виховувати свідомих, відповідальних і повновартісних громадян."
+    section: mission
+    list:
+      - title: "Виховання характеру"
+        desc: "Через скаутський метод, гутірки та спільну працю ми розвиваємо самостійність, відповідальність і лідерські якості."
+        icon: fas fa-campground # find more at https://fontawesome.com/icons
+      - title: "Любов до України"
+        desc: "Зберігаємо українську мову, традиції та культуру, виховуємо свідомих патріотів, де б вони не жили."
+        icon: fas fa-heart
+      - title: "Служіння спільноті"
+        desc: "Вчимося допомагати іншим, бути корисними громаді та разом творити сильне українське середовище в Нідерландах."
+        icon: fas fa-hands-helping
+
+  contact:
+    title: "Контакти"
+    text: "Будемо раді познайомитися. Напиши нам або завітай у гості."
+    section: contact
+    address: "Waterleliegracht 152, 1051 PE Amsterdam"
+    email-address: "plast.org.netherlands@gmail.com"
+    facebook: "https://www.facebook.com/plastnederland"
+
+  footer:
+    legal: # "Privacy Policy"
+    social:
+      - url: https://www.facebook.com/plastnederland
+        icon: "fab fa-facebook-f"
+      - url: mailto:plast.org.netherlands@gmail.com
+        icon: "fas fa-envelope"
+en-US:
+  <<: *DEFAULT_EN
+en-CA:
+  <<: *DEFAULT_EN
+en-GB:
+  <<: *DEFAULT_EN
+en-AU:
+  <<: *DEFAULT_EN

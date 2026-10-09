@@ -1,0 +1,33 @@
+# Site settings for Plast — Oekraïense Scouts in Nederland
+
+remote_theme: raviriley/agency-jekyll-theme
+
+# If deploying to https://<user>.github.io/<repo>/ set baseurl to "/<repo>".
+# For a custom domain or a user/organization root site, leave both empty.
+url: ""
+baseurl: ""
+
+title: "Українська скаутська організація в Нідерландах"
+email: plast.org.netherlands@gmail.com # contact form submissions go here
+description: >-
+  Пласт — Oekraïense Scouts in Nederland. Українська скаутська організація
+  в Нідерландах: виховання, табори, мандрівки та українська спільнота.
+author: "Пласт — Oekraïense Scouts in Nederland"
+
+logo:
+  path: assets/img/plast-logo.svg
+  height: 48
+
+locale: "en-US" # keys below are filled with Ukrainian text
+
+analytics:
+  google: # Google Analytics tracking code here
+
+collections:
+  portfolio:
+
+markdown: kramdown
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed

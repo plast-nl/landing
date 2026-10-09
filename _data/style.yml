@@ -1,0 +1,8 @@
+# Color Customization
+highlight: "#21468B" # Dutch flag blue
+# white: "#FF0000"
+# black: "#000"
+
+# Image Customization
+header-image: "../img/hero.jpg"
+contact-image: "../img/map-image.png"
