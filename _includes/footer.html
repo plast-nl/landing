@@ -1,25 +1,7 @@
-<!-- Footer -->
-{% assign f = site.data.sitetext[site.locale].footer %}
-<footer class="footer" id="footer" style="background-color: white">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
-      </div>
-      <div class="col-md-6">
-        <ul class="list-inline social-buttons">
-          {% for link in f.social %}
-          <li class="list-inline-item">
-            {% if link.url %}
-            <a href="{{ link.url }}">
-              {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
-            </a>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <a href="#page-top" class="footer-brand">Пласт <span>Нідерланди</span></a>
+    <p>© {{ 'now' | date: '%Y' }} Пласт у Нідерландах</p>
+    <a href="#page-top">Нагору <span aria-hidden="true">↑</span></a>
   </div>
 </footer>
-<!-- End Footer -->

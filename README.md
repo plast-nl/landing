@@ -1,8 +1,9 @@
 # Пласт — Oekraïense Scouts in Nederland
 
 Лендінг української скаутської організації Пласт у Нідерландах.
-Побудований на [Agency Jekyll Theme](https://github.com/raviriley/agency-jekyll-theme)
-(підключений як `remote_theme`).
+Побудований на Jekyll. Головна сторінка має власний адаптивний дизайн
+із зеленими акцентами; [Agency Jekyll Theme](https://github.com/raviriley/agency-jekyll-theme)
+залишається підключеною як `remote_theme` для допоміжних сторінок.
 
 ## Локальний запуск
 
@@ -17,8 +18,12 @@ bundle exec jekyll serve
 
 - `_data/sitetext.yml` — увесь текст сторінки (герой, «Про нас», «Місія», «Контакти»).
 - `_data/navigation.yml` — пункти меню.
-- `_data/style.yml` — кольори та фонові зображення.
-- `_layouts/home.html` — локальне перевизначення, показує лише потрібні секції.
+- `_data/style.yml` — налаштування Agency theme; кольори головної сторінки задаються в `assets/css/home.css`.
+- `_layouts/home.html` — HTML-структура головної сторінки.
+- `_includes/` — навігація, головний банер, секції та футер.
+- `assets/css/home.css` — власні стилі головної сторінки та мобільна адаптація.
+- `assets/js/home.js` — відкриття та закриття мобільного меню.
+- Розмір логотипа: 96 px на комп’ютері, 64 px на екранах до 992 px.
 - `_config.yml` — загальні налаштування та email для контактної форми.
 
 ## Деплой на GitHub Pages
@@ -32,10 +37,11 @@ bundle exec jekyll serve
 ## Зображення
 
 - `assets/img/plast-logo.svg` — емблема Пласту (Wikimedia Commons).
+- `assets/img/plast-nl-logo.svg` — емблема на круглому прапорі Нідерландів із прозорим зовнішнім фоном.
 - `assets/img/hero.jpg` — фонове фото героя (Wikimedia Commons).
 
-Щоб замінити фото героя, поклади свій файл у `assets/img/` і онови
-`header-image` у `_data/style.yml`.
+Щоб замінити фото героя, поклади свій файл у `assets/img/` під назвою `hero.jpg`
+або онови шлях у `_includes/hero.html`.
 
 ## Контакти на сайті
 

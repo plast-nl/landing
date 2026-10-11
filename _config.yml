@@ -15,8 +15,8 @@ description: >-
 author: "Пласт — Oekraïense Scouts in Nederland"
 
 logo:
-  path: assets/img/plast-logo.svg
-  height: 48
+  path: assets/img/plast-nl-logo.svg
+  height: 96
 
 locale: "en-US" # keys below are filled with Ukrainian text
 
