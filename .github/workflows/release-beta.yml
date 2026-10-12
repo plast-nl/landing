@@ -1,0 +1,49 @@
+name: Release to beta
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Branch or tag to publish to beta.plast-nl.org"
+        required: true
+        default: "beta"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-beta
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout selected ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build -d _site
+        env:
+          JEKYLL_ENV: production
+
+      - name: Set beta domain
+        run: echo "beta.plast-nl.org" > _site/CNAME
+
+      - name: Publish to beta repo
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.BETA_TOKEN }}
+          external_repository: plast-nl/landing-beta
+          publish_branch: gh-pages
+          publish_dir: _site
+          force_orphan: true
+          commit_message: "Deploy beta from ${{ inputs.ref }} @ ${{ github.sha }}"
