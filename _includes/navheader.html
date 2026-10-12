@@ -6,7 +6,7 @@
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Меню <span aria-hidden="true">☰</span></button>
     <nav class="main-navigation" id="main-navigation" aria-label="Основна навігація">
-      {% for link in site.data.navigation[site.locale].nav %}
+      {% for link in site.data.navigation.nav %}
       <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
       {% endfor %}
       <a class="button button-small" href="{% if page.url == '/oseredky/' %}#join{% else %}{{ '/oseredky/' | relative_url }}{% endif %}">Долучитися <span aria-hidden="true">{% if page.url == '/oseredky/' %}↓{% else %}→{% endif %}</span></a>
