@@ -3,8 +3,42 @@ layout: site
 title: Осередки та станиці
 permalink: /oseredky/
 ---
-<section class="section-space interior-page"><div class="shell">
-<h1>Осередки та станиці</h1><p class="page-intro">{{ site.data.groups.intro }}</p>
-<div class="overview-grid">{% for group in site.data.groups.groups %}<a class="overview-link" href="#join"><h2>{{ group.city }}</h2><p>{{ group.province }}</p></a>{% endfor %}</div>
-<aside class="groups-help" id="join"><div><h2>Бажаєте долучитися до Пласту?</h2><p>У своєму листі зазначте місто, до якого бажаєте долучитися.</p></div><a class="button" href="{{ '/contacts/' | relative_url }}">Написати нам →</a></aside>
-</div></section>
+<section class="section-space interior-page" aria-labelledby="groups-title">
+  <div class="shell">
+    <p class="eyebrow">Пласт поруч із тобою</p>
+    <h1 id="groups-title">Осередки та станиці</h1>
+    <p class="page-intro">{{ site.data.groups.intro }}</p>
+    <div class="groups-locator">
+      <figure class="map-panel">
+        {% include netherlands-map.svg %}
+        <figcaption><span class="map-legend-dot" aria-hidden="true"></span> Осередки та станиці · Межі провінцій</figcaption>
+        <p class="map-note">Позначки показують центри міст.</p>
+      </figure>
+      <nav class="city-directory" aria-label="Обрати місто">
+        <p class="eyebrow">Знайди свій осередок</p>
+        <h2>Пласт поруч</h2>
+        <p class="directory-intro">Обери місто на мапі або у списку, щоб долучитися до осередку.</p>
+        {% for group in site.data.groups.groups %}
+        <a class="city-directory-link" href="#join" data-join-city="{{ group.city | escape }}">
+          <span><strong>{{ group.city }}</strong><small>{{ group.province }}</small></span>
+          <span aria-hidden="true">↓</span>
+        </a>
+        {% endfor %}
+      </nav>
+    </div>
+    {% assign c = site.data.sitetext[site.locale].contact %}
+    <aside class="groups-help groups-join" id="join" aria-labelledby="groups-help-title">
+      <div class="groups-join-copy">
+        <p class="eyebrow">Наступний крок</p>
+        <h2 id="groups-help-title">Бажаєте долучитися до Пласту?</h2>
+        <p>У своєму листі, будь ласка, зазначте, до якого осередку ви або ваша дитина бажаєте долучитися, обравши місто зі списку вище.</p>
+        <p>Немає осередку поруч або потрібна допомога з вибором? Напишіть нам — допоможемо знайти свою спільноту.</p>
+      </div>
+      <div class="groups-join-actions">
+        <p class="join-city-status" role="status" aria-live="polite" hidden></p>
+        <a class="button" id="group-join-email" data-email="{{ c.email-address | escape }}" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}" aria-describedby="join-email-note">Написати нам <span aria-hidden="true">↗</span></a>
+        <p class="join-email-note" id="join-email-note">Відкриється ваша поштова програма.</p>
+      </div>
+    </aside>
+  </div>
+</section>

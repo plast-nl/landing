@@ -84,3 +84,24 @@ document.querySelectorAll('[data-copy]').forEach(button => {
     }, 4000);
   });
 });
+
+const groupJoinEmail = document.getElementById('group-join-email');
+if (groupJoinEmail) {
+  const cityStatus = document.querySelector('.join-city-status');
+  const cityLinks = document.querySelectorAll('[data-join-city]');
+  cityLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const city = link.dataset.joinCity;
+      const subject = `Хочу долучитися до Пласту — ${city}`;
+      groupJoinEmail.href = `mailto:${groupJoinEmail.dataset.email}?subject=${encodeURIComponent(subject)}`;
+      cityStatus.textContent = `Обране місто: ${city}`;
+      cityStatus.hidden = false;
+      cityLinks.forEach(cityLink => {
+        const selected = cityLink.dataset.joinCity === city;
+        cityLink.classList.toggle('is-selected', selected);
+        if (selected) cityLink.setAttribute('aria-current', 'true');
+        else cityLink.removeAttribute('aria-current');
+      });
+    });
+  });
+}
