@@ -3,7 +3,7 @@
   <div class="shell">
     <div class="mission-intro">
       <div><p class="eyebrow">02 / {{ s.title }}</p><h2 id="mission-title">{{ s.heading }}</h2></div>
-      <p>{{ s.text }}</p>
+      <div class="mission-description">{{ s.text | markdownify }}</div>
     </div>
     <div class="mission-values">
       {% for item in s.list %}

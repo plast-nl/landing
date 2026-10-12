@@ -367,7 +367,7 @@ a:focus-visible,button:focus-visible {
   max-width:400px;
 }
 
-.mission-intro>p {
+.mission-description {
   font-size:17px;
   color:#e0e9df;
 }
@@ -714,7 +714,7 @@ a:focus-visible,button:focus-visible {
   .about h1,.mission-intro h2,.contact-copy h1 {
     max-width:100%;
   }
-  .mission-intro>p {
+  .mission-description {
     font-size:16px;
   }
   .mission-values {
