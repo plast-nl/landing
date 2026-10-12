@@ -5,12 +5,36 @@
       <p class="eyebrow">03 / {{ c.title }}</p>
       <h1 id="contact-title">{{ c.heading }}</h1>
       <p>{{ c.text }}</p>
-      <a class="button" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode }}">Написати нам <span aria-hidden="true">↗</span></a>
+      <a class="button" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}">Написати нам <span aria-hidden="true">↗</span></a>
     </div>
     <address class="contact-details">
-      {% if c.email-address %}<div class="contact-row"><span class="contact-label">Електронна пошта</span><a href="mailto:{{ c.email-address }}">{{ c.email-address }} <span aria-hidden="true">↗</span></a></div>{% endif %}
-      {% if c.address %}<div class="contact-row"><span class="contact-label">Наша адреса</span><a href="https://www.google.com/maps/search/?api=1&query={{ c.address | url_encode }}" target="_blank" rel="noopener">{{ c.address }} <span aria-hidden="true">↗</span></a></div>{% endif %}
-      {% if c.facebook %}<div class="contact-row"><span class="contact-label">Життя спільноти</span><a href="{{ c.facebook }}" target="_blank" rel="noopener">Пласт Нідерланди у Facebook <span aria-hidden="true">↗</span></a></div>{% endif %}
+      {% if c.email-address %}
+      <div class="contact-row">
+        <span class="contact-label">Електронна пошта</span>
+        <div class="contact-value">
+          <a href="mailto:{{ c.email-address }}">{{ c.email-address }} <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      {% endif %}
+      {% if c.address %}
+      <div class="contact-row">
+        <span class="contact-label">Наша адреса</span>
+        <div class="contact-value">
+          <a href="https://www.google.com/maps/search/?api=1&query={{ c.address | url_encode }}" target="_blank" rel="noopener">{{ c.address }} <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      {% endif %}
+      {% if c.facebook %}
+      <div class="contact-row">
+        <span class="contact-label">Життя спільноти</span>
+        <div class="contact-value">
+          <a href="{{ c.facebook }}" target="_blank" rel="noopener" aria-label="Пласт Нідерланди у Facebook">
+            <span class="social-link-label">{% include social-icon.html name='facebook' %} Пласт Нідерланди</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      {% endif %}
     </address>
   </div>
 </section>
