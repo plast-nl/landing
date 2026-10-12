@@ -1,12 +1,7 @@
 name: Release to beta
 
 on:
-  workflow_dispatch:
-    inputs:
-      ref:
-        description: "Branch or tag to publish to beta.plast-nl.org"
-        required: true
-        default: "beta"
+  workflow_dispatch: {}
 
 permissions:
   contents: read
@@ -19,10 +14,8 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout selected ref
+      - name: Checkout selected branch
         uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.ref }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -46,4 +39,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: _site
           force_orphan: true
-          commit_message: "Deploy beta from ${{ inputs.ref }} @ ${{ github.sha }}"
+          commit_message: "Deploy beta from ${{ github.ref_name }} @ ${{ github.sha }}"
