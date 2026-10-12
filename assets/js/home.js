@@ -48,6 +48,18 @@ async function copyContactText(text) {
   }
 }
 
+document.querySelectorAll('.footer-back').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    document.getElementById('page-top')?.focus({ preventScroll: true });
+    window.history.replaceState(window.history.state, '', '#page-top');
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    });
+  });
+});
+
 document.querySelectorAll('[data-copy]').forEach(button => {
   const status = button.closest('.contact-row').querySelector('.copy-status');
   let resetTimer;
