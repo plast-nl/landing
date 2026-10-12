@@ -1,0 +1,10 @@
+sections:
+  - id: meetings
+    title: "Сходини"
+    text: "Text"
+  - id: camps
+    title: "Табори та мандрівки"
+    text: "Text"
+  - id: training
+    title: "Вишколи"
+    text: "Text"

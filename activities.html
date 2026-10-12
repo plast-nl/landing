@@ -1,0 +1,20 @@
+---
+layout: site
+title: Діяльність
+permalink: /activities/
+---
+<section class="section-space interior-page" aria-labelledby="activities-title">
+  <div class="shell">
+    <p class="eyebrow">Що ми робимо</p>
+    <h1 id="activities-title">Діяльність</h1>
+    <div class="content-sections">
+      {% for activity in site.data.activities.sections %}
+      <section class="content-section" id="{{ activity.id }}" aria-labelledby="{{ activity.id }}-title">
+        <span class="content-number" aria-hidden="true">0{{ forloop.index }}</span>
+        <div><h2 id="{{ activity.id }}-title">{{ activity.title }}</h2>{{ activity.text | markdownify }}</div>
+      </section>
+      {% endfor %}
+    </div>
+    <a class="button" href="{{ '/oseredky/' | relative_url }}">Знайти свій осередок <span aria-hidden="true">→</span></a>
+  </div>
+</section>

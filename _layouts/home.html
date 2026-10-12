@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ site.description | escape }}">
-  <title>{{ site.title | escape }}</title>
-  <link rel="icon" type="image/svg+xml" href="{{ site.logo.path | relative_url }}">
-  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
-</head>
-<body id="page-top">
-  <a class="skip-link" href="#main">До основного вмісту</a>
-  {% include navheader.html %}
-  <main id="main">
-    {% include hero.html %}
-    {% include about.html %}
-    {% include services.html %}
-    {% include contact.html %}
-  </main>
-  {% include footer.html %}
-  <script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>
-</body>
-</html>
+---
+layout: site
+---
+{% include hero.html %}
+<section class="section-space home-overview" aria-labelledby="overview-title">
+  <div class="shell">
+    <p class="eyebrow">Пласт у Нідерландах</p>
+    <h2 id="overview-title">Знайди свою спільноту</h2>
+    <div class="overview-grid">
+      <a class="overview-link" href="{{ "/about/" | relative_url }}"><h3>Про Пласт</h3><p>Наша спільнота, місія та цінності.</p><span aria-hidden="true">→</span></a>
+      <a class="overview-link" href="{{ "/activities/" | relative_url }}"><h3>Діяльність</h3><p>Сходини, табори, мандрівки та спільні справи.</p><span aria-hidden="true">→</span></a>
+      <a class="overview-link" href="{{ "/oseredky/" | relative_url }}"><h3>Осередки та станиці</h3><p>Чотири міста. Знайди осередок поруч із тобою.</p><span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>

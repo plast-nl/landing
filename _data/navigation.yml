@@ -2,12 +2,14 @@
 
 en: &DEFAULT_EN
   nav:
-    - title: "Про нас"
-      section: about
-    - title: "Місія"
-      section: mission
+    - title: "Про Пласт"
+      url: /about/
+    - title: "Діяльність"
+      url: /activities/
+    - title: "Осередки та станиці"
+      url: /oseredky/
     - title: "Контакти"
-      section: contact
+      url: /contacts/
 en-US:
   <<: *DEFAULT_EN
 en-CA:

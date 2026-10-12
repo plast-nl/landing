@@ -1,0 +1,10 @@
+---
+layout: site
+title: Осередки та станиці
+permalink: /oseredky/
+---
+<section class="section-space interior-page"><div class="shell">
+<h1>Осередки та станиці</h1><p class="page-intro">{{ site.data.groups.intro }}</p>
+<div class="overview-grid">{% for group in site.data.groups.groups %}<a class="overview-link" href="#join"><h2>{{ group.city }}</h2><p>{{ group.province }}</p></a>{% endfor %}</div>
+<aside class="groups-help" id="join"><div><h2>Бажаєте долучитися до Пласту?</h2><p>У своєму листі зазначте місто, до якого бажаєте долучитися.</p></div><a class="button" href="{{ '/contacts/' | relative_url }}">Написати нам →</a></aside>
+</div></section>

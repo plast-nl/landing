@@ -1,16 +1,16 @@
 {% assign t = site.data.sitetext[site.locale] %}
 <header class="site-header">
   <div class="shell header-inner">
-    <a class="brand" href="#page-top" aria-label="Пласт Нідерланди — головна">
+    <a class="brand" href="{{ "/" | relative_url }}" aria-label="Пласт Нідерланди — головна">
       <img class="brand-logo" height="{{ site.logo.height | default: 96 }}" width="{{ site.logo.height | default: 96 }}" src="{{ site.logo.path | relative_url }}" alt="Емблема Пласту на прапорі Нідерландів">
       <span class="brand-name">Пласт<span>Нідерланди</span></span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Меню <span aria-hidden="true">☰</span></button>
     <nav class="main-navigation" id="main-navigation" aria-label="Основна навігація">
       {% for link in site.data.navigation[site.locale].nav %}
-      <a href="{% if link.url %}{{ link.url }}{% else %}#{{ link.section }}{% endif %}">{{ link.title }}</a>
+      <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
       {% endfor %}
-      <a class="button button-small" href="mailto:{{ t.contact.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode }}">Долучитися <span aria-hidden="true">↗</span></a>
+      <a class="button button-small" href="{{ "/oseredky/" | relative_url }}">Долучитися <span aria-hidden="true">→</span></a>
     </nav>
   </div>
 </header>
