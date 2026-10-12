@@ -13,7 +13,9 @@
         <span class="contact-label">Електронна пошта</span>
         <div class="contact-value">
           <a href="mailto:{{ c.email-address }}">{{ c.email-address }} <span aria-hidden="true">↗</span></a>
+          {% include copy-button.html value=c.email-address label='Скопіювати електронну пошту' %}
         </div>
+        <span class="copy-status" role="status" aria-live="polite"></span>
       </div>
       {% endif %}
       {% if c.address %}
@@ -21,7 +23,9 @@
         <span class="contact-label">Наша адреса</span>
         <div class="contact-value">
           <a href="https://www.google.com/maps/search/?api=1&query={{ c.address | url_encode }}" target="_blank" rel="noopener">{{ c.address }} <span aria-hidden="true">↗</span></a>
+          {% include copy-button.html value=c.address label='Скопіювати адресу' %}
         </div>
+        <span class="copy-status" role="status" aria-live="polite"></span>
       </div>
       {% endif %}
       {% if c.facebook %}
@@ -32,7 +36,9 @@
             <span class="social-link-label">{% include social-icon.html name='facebook' %} Пласт Нідерланди</span>
             <span aria-hidden="true">↗</span>
           </a>
+          {% include copy-button.html value=c.facebook label='Скопіювати посилання на Facebook' %}
         </div>
+        <span class="copy-status" role="status" aria-live="polite"></span>
       </div>
       {% endif %}
     </address>

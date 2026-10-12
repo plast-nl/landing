@@ -643,7 +643,44 @@
     gap:0;
   }}.about h1,.contact-copy h1{
   font-size:clamp(36px,4vw,54px);
-}/* Copy controls keep contact links readable at phone widths. *//* Province map and an equivalent keyboard-friendly city directory. */.groups-grid{
+}/* Copy controls keep contact links readable at phone widths. */.contact-value{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}.contact-value>a{
+  flex:1;
+  min-width:0;
+}.copy-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  width:44px;
+  height:44px;
+  padding:0;
+  border:1px solid #c6cdbf;
+  border-radius:6px;
+  color:var(--green);
+  background:transparent;
+  cursor:pointer;
+}.copy-button[hidden]{
+  display:none;
+}.copy-button:hover,.copy-button.is-copied{
+  background:#e0e7d8;
+  border-color:var(--green);
+}.copy-button:disabled{
+  cursor:wait;
+}.copy-button .copy-check,.copy-button.is-copied .copy-symbol{
+  display:none;
+}.copy-button.is-copied .copy-check{
+  display:block;
+}.copy-status{
+  display:block;
+  font-size:12px;
+  color:var(--green);
+}.copy-status:not(:empty){
+  margin-top:8px;
+}/* Province map and an equivalent keyboard-friendly city directory. */.groups-grid{
   grid-template-columns:repeat(2,minmax(0,1fr));
 }.group-entry:target{
   background:#edf0e5;
