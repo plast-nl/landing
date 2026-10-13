@@ -1,33 +1,26 @@
-# Site settings for Plast — Oekraïense Scouts in Nederland
-
-remote_theme: raviriley/agency-jekyll-theme
-
-# If deploying to https://<user>.github.io/<repo>/ set baseurl to "/<repo>".
-# For a custom domain or a user/organization root site, leave both empty.
+# Plast Netherlands - custom Jekyll website.
+# Set baseurl to "/repository-name" only for a GitHub Pages project URL.
 url: ""
 baseurl: ""
 
 title: "Українська скаутська організація в Нідерландах"
-email: plast.org.netherlands@gmail.com # contact form submissions go here
 description: >-
   Пласт — Oekraïense Scouts in Nederland. Українська скаутська організація
   в Нідерландах: виховання, табори, мандрівки та українська спільнота.
-author: "Пласт — Oekraïense Scouts in Nederland"
+lang: uk
 
 logo:
-  path: assets/img/plast-logo.svg
-  height: 48
-
-locale: "en-US" # keys below are filled with Ukrainian text
-
-analytics:
-  google: # Google Analytics tracking code here
-
-collections:
-  portfolio:
+  path: assets/img/plast-nl-logo.svg
+  height: 96
 
 markdown: kramdown
 
-plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
+# Internal guides and tooling do not belong in the published website.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - output/
+  - tmp/

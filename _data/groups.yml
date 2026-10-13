@@ -1,0 +1,14 @@
+intro: "Чотири міста — одна пластова спільнота. Обери осередок поруч із тобою."
+groups:
+  - id: den-haag
+    city: "Гаага"
+    province: "Zuid-Holland"
+  - id: eindhoven
+    city: "Ейндговен"
+    province: "Noord-Brabant"
+  - id: amsterdam
+    city: "Амстердам"
+    province: "Noord-Holland"
+  - id: rotterdam
+    city: "Роттердам"
+    province: "Zuid-Holland"

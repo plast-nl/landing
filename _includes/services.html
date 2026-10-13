@@ -1,0 +1,18 @@
+{% assign s = site.data.sitetext.services %}
+<section class="mission section-space" id="{{ s.section | default: 'mission' }}" aria-labelledby="mission-title">
+  <div class="shell">
+    <div class="mission-intro">
+      <div><p class="eyebrow">02 / {{ s.title }}</p><h2 id="mission-title">{{ s.heading }}</h2></div>
+      <div class="mission-description">{{ s.text | markdownify }}</div>
+    </div>
+    <div class="mission-values">
+      {% for item in s.list %}
+      <article class="mission-value">
+        <span class="value-number" aria-hidden="true">0{{ forloop.index }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,20 +1,11 @@
 ---
-layout: default
+layout: site
+title: Сторінку не знайдено
+permalink: /404.html
 ---
-<style>
-  .not-found {
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 1rem;
-  }
-</style>
-
-<div class="not-found">
-  <h1>404</h1>
-  <h3>Такої сторінки не існує</h3>
-  <p><a href="{{ '/' | relative_url }}">Повернутися на головну</a></p>
-</div>
+<section class="not-found shell" aria-labelledby="not-found-title">
+  <p class="eyebrow">Сторінку не знайдено</p>
+  <h1 id="not-found-title">404</h1>
+  <h2>Такої сторінки не існує</h2>
+  <a class="button" href="{{ '/' | relative_url }}">Повернутися на головну <span aria-hidden="true">{% include icon.html name='arrow-right' %}</span></a>
+</section>

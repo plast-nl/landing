@@ -1,0 +1,20 @@
+{% assign t = site.data.sitetext %}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="small-sun" aria-hidden="true">{% include icon.html name='star' %}</span> {{ t.header.eyebrow }}</p>
+      <h1 id="hero-title">{{ t.header.title }}</h1>
+      <p class="hero-description">{{ t.header.text }}</p>
+      <div class="hero-actions">
+        <a class="button" href="{{ t.header.buttonlink | relative_url }}">{{ t.header.button }} <span aria-hidden="true">{% include icon.html name='arrow-right' %}</span></a>
+        <a class="text-link" href="{{ "/about/" | relative_url }}">Познайомитися з нами <span aria-hidden="true">{% include icon.html name='arrow-right' %}</span></a>
+      </div>
+      <p class="hero-note">Українська мова. Скаутські пригоди. Свої люди.</p>
+    </div>
+    <figure class="hero-photo">
+      <img src="{{ '/assets/img/hero.jpg' | relative_url }}" alt="Скаути збираються разом біля вечірньої ватри" width="800" height="532" fetchpriority="high">
+      <figcaption><span aria-hidden="true">{% include icon.html name='star' %}</span> {{ t.header.photo-caption }}</figcaption>
+    </figure>
+  </div>
+  <div class="shell hero-bottom"><span>Oekraïense scouts in Nederland</span><a href="{{ "/about/" | relative_url }}" aria-label="Перейти на сторінку Про Пласт">Відкривай Пласт <span aria-hidden="true">{% include icon.html name='arrow-right' %}</span></a></div>
+</section>
