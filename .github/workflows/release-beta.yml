@@ -38,5 +38,5 @@ jobs:
           external_repository: plast-nl/landing-beta
           publish_branch: gh-pages
           publish_dir: _site
-          force_orphan: true
+          allow_empty_commit: true
           commit_message: "Deploy beta from ${{ github.ref_name }} @ ${{ github.sha }}"
