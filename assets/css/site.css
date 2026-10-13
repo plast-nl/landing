@@ -747,7 +747,11 @@ button:focus-visible {
   font-size: 23px;
 }
 .groups-join {
-  scroll-margin-top: 145px;
+  /* html already offsets anchor scrolling for the sticky header. */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 32px;
+  row-gap: 18px;
   align-items: center;
   padding: 40px;
   border-radius: 8px;
@@ -755,22 +759,30 @@ button:focus-visible {
 .groups-join-copy {
   max-width: 690px;
 }
-.groups-join-copy .eyebrow {
+.groups-join-heading .eyebrow {
   margin: 0 0 16px;
 }
-.groups-join-copy h2 {
+.groups-join-heading h2 {
   font-size: clamp(30px, 3vw, 42px);
 }
-.groups-join-copy p:not(.eyebrow) {
+.groups-join-copy p {
   color: var(--muted);
+  margin-top: 0;
+}
+.groups-join-copy p + p {
   margin-top: 18px;
 }
-.groups-join-actions {
-  flex-shrink: 0;
+.groups-join-heading,
+.groups-join-copy {
+  grid-column: 1;
 }
-.join-city-status {
+.groups-join-actions {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+.groups-join .join-city-status {
   font-size: 13px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   color: var(--green);
 }
 .groups-join .join-email-note {
@@ -884,10 +896,17 @@ button:focus-visible {
     padding: 16px;
   }
   .groups-join {
-    flex-direction: column;
-    align-items: flex-start;
-    scroll-margin-top: 105px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
     padding: 28px;
+  }
+  .groups-join-actions {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .groups-join-copy {
+    grid-row: 3;
   }
 }
 @media (max-width: 639.98px) {

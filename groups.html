@@ -28,16 +28,18 @@ permalink: /oseredky/
     </div>
     {% assign c = site.data.sitetext.contact %}
     <aside class="groups-help groups-join" id="join" aria-labelledby="groups-help-title">
-      <div class="groups-join-copy">
+      <div class="groups-join-heading">
         <p class="eyebrow">Наступний крок</p>
         <h2 id="groups-help-title">Бажаєте долучитися до Пласту?</h2>
-        <p>У своєму листі, будь ласка, зазначте, до якого осередку ви або ваша дитина бажаєте долучитися, обравши місто зі списку вище.</p>
-        <p>Немає осередку поруч або потрібна допомога з вибором? Напишіть нам — допоможемо знайти свою спільноту.</p>
       </div>
       <div class="groups-join-actions">
         <p class="join-city-status" role="status" aria-live="polite" hidden></p>
         <a class="button" id="group-join-email" data-email="{{ c.email-address | escape }}" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}" aria-describedby="join-email-note">Написати нам <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
         <p class="join-email-note" id="join-email-note">Відкриється ваша поштова програма.</p>
+      </div>
+      <div class="groups-join-copy">
+        <p>У своєму листі, будь ласка, зазначте, до якого осередку ви або ваша дитина бажаєте долучитися, обравши місто зі списку вище.</p>
+        <p>Немає осередку поруч або потрібна допомога з вибором? Напишіть нам — допоможемо знайти свою спільноту.</p>
       </div>
     </aside>
   </div>
