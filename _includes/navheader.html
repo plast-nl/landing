@@ -4,12 +4,12 @@
       <img class="brand-logo" height="{{ site.logo.height | default: 96 }}" width="{{ site.logo.height | default: 96 }}" src="{{ site.logo.path | relative_url }}" alt="Емблема Пласту на прапорі Нідерландів">
       <span class="brand-name">Пласт<span>Нідерланди</span></span>
     </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Меню <span aria-hidden="true">☰</span></button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Меню <span aria-hidden="true">{% include icon.html name='menu' %}</span></button>
     <nav class="main-navigation" id="main-navigation" aria-label="Основна навігація">
       {% for link in site.data.navigation.nav %}
       <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
       {% endfor %}
-      <a class="button button-small" href="{% if page.url == '/oseredky/' %}#join{% else %}{{ '/oseredky/' | relative_url }}{% endif %}">Долучитися <span aria-hidden="true">{% if page.url == '/oseredky/' %}↓{% else %}→{% endif %}</span></a>
+      <a class="button button-small" href="{% if page.url == '/oseredky/' %}#join{% else %}{{ '/oseredky/' | relative_url }}{% endif %}">Долучитися <span aria-hidden="true">{% if page.url == '/oseredky/' %}{% include icon.html name='arrow-down' %}{% else %}{% include icon.html name='arrow-right' %}{% endif %}</span></a>
     </nav>
   </div>
 </header>

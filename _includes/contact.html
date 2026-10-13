@@ -5,14 +5,14 @@
       <p class="eyebrow">03 / {{ c.title }}</p>
       <h1 id="contact-title">{{ c.heading }}</h1>
       <p>{{ c.text }}</p>
-      <a class="button" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}">Написати нам <span aria-hidden="true">↗</span></a>
+      <a class="button" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}">Написати нам <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
     </div>
     <address class="contact-details">
       {% if c.email-address %}
       <div class="contact-row">
         <span class="contact-label">Електронна пошта</span>
         <div class="contact-value">
-          <a href="mailto:{{ c.email-address }}">{{ c.email-address }} <span aria-hidden="true">↗</span></a>
+          <a href="mailto:{{ c.email-address }}">{{ c.email-address }} <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
           {% include copy-button.html value=c.email-address label='Скопіювати електронну пошту' %}
         </div>
         <span class="copy-status" role="status" aria-live="polite"></span>
@@ -22,7 +22,7 @@
       <div class="contact-row">
         <span class="contact-label">Наша адреса</span>
         <div class="contact-value">
-          <a href="https://www.google.com/maps/search/?api=1&query={{ c.address | url_encode }}" target="_blank" rel="noopener">{{ c.address }} <span aria-hidden="true">↗</span></a>
+          <a href="https://www.google.com/maps/search/?api=1&query={{ c.address | url_encode }}" target="_blank" rel="noopener">{{ c.address }} <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
           {% include copy-button.html value=c.address label='Скопіювати адресу' %}
         </div>
         <span class="copy-status" role="status" aria-live="polite"></span>
@@ -34,7 +34,7 @@
         <div class="contact-value">
           <a href="{{ c.facebook }}" target="_blank" rel="noopener" aria-label="Пласт Нідерланди у Facebook">
             <span class="social-link-label">{% include social-icon.html name='facebook' %} Пласт Нідерланди</span>
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">{% include icon.html name='external' %}</span>
           </a>
           {% include copy-button.html value=c.facebook label='Скопіювати посилання на Facebook' %}
         </div>

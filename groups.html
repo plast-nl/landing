@@ -21,7 +21,7 @@ permalink: /oseredky/
         {% for group in site.data.groups.groups %}
         <a class="city-directory-link" href="#join" data-join-city="{{ group.city | escape }}">
           <span><strong>{{ group.city }}</strong><small>{{ group.province }}</small></span>
-          <span aria-hidden="true">↓</span>
+          <span aria-hidden="true">{% include icon.html name='arrow-down' %}</span>
         </a>
         {% endfor %}
       </nav>
@@ -36,7 +36,7 @@ permalink: /oseredky/
       </div>
       <div class="groups-join-actions">
         <p class="join-city-status" role="status" aria-live="polite" hidden></p>
-        <a class="button" id="group-join-email" data-email="{{ c.email-address | escape }}" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}" aria-describedby="join-email-note">Написати нам <span aria-hidden="true">↗</span></a>
+        <a class="button" id="group-join-email" data-email="{{ c.email-address | escape }}" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}" aria-describedby="join-email-note">Написати нам <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
         <p class="join-email-note" id="join-email-note">Відкриється ваша поштова програма.</p>
       </div>
     </aside>

@@ -4,7 +4,7 @@
     <div>
       <p class="eyebrow">01 / {{ a.title }}</p>
       <h1 id="about-title">{{ a.heading }}</h1>
-      <div class="about-mark" aria-hidden="true">✳</div>
+      <div class="about-mark" aria-hidden="true">{% include icon.html name='star' %}</div>
     </div>
     <div class="about-body">{{ a.body | markdownify }}</div>
   </div>
