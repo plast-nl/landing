@@ -1,25 +1,30 @@
-<!-- Footer -->
-{% assign f = site.data.sitetext[site.locale].footer %}
-<footer class="footer" id="footer" style="background-color: white">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
-      </div>
-      <div class="col-md-6">
-        <ul class="list-inline social-buttons">
-          {% for link in f.social %}
-          <li class="list-inline-item">
-            {% if link.url %}
-            <a href="{{ link.url }}">
-              {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
-            </a>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+{% assign c = site.data.sitetext.contact %}
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <a href="{{ "/" | relative_url }}" class="footer-brand">Пласт <span>Нідерланди</span></a>
+    {% comment %}
+    Keep the exact registered organisation name visible, not only the short brand.
+    This helps Google Workspace for Nonprofits reviewers identify the organisation
+    operating this domain. Keep the Contacts link so its details are easy to find.
+    Preserve both during redesigns; change the name only if the legal name changes.
+    {% endcomment %}
+    <p>© {{ 'now' | date: '%Y' }} {{ site.data.sitetext.organisation.legal-name | escape }}<br>
+      <a href="{{ '/contacts/' | relative_url }}">Контакти</a>
+    </p>
+    <div class="footer-actions">
+      <nav class="footer-social" aria-label="Соціальні мережі та пошта">
+        {% if c.facebook %}
+        <a class="social-button" href="{{ c.facebook }}" target="_blank" rel="noopener" aria-label="Пласт Нідерланди у Facebook">
+          {% include social-icon.html name='facebook' %}
+        </a>
+        {% endif %}
+        {% if c.email-address %}
+        <a class="social-button" href="mailto:{{ c.email-address }}" aria-label="Написати Пласту електронною поштою">
+          {% include social-icon.html name='email' %}
+        </a>
+        {% endif %}
+      </nav>
+      <a class="footer-back" href="#page-top">Нагору <span aria-hidden="true">{% include icon.html name='arrow-up' %}</span></a>
     </div>
   </div>
 </footer>
-<!-- End Footer -->
