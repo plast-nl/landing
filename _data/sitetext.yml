@@ -47,7 +47,7 @@ services:
 contact:
   title: "Контакти"
   heading: "Твоя пригода починається тут."
-  text: "Будемо раді познайомитися. Напиши нам, щоб дізнатися більше про Пласт і наші зустрічі."
+  text: "Будемо раді познайомитися. Напиши нам."
   section: contact
   address: "Waterleliegracht 152, 1051 PE Amsterdam"
   email-address: "plast.org.netherlands@gmail.com"
