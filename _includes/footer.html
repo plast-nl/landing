@@ -8,7 +8,7 @@
     operating this domain. Keep the Contacts link so its details are easy to find.
     Preserve both during redesigns; change the name only if the legal name changes.
     {% endcomment %}
-    <p>© {{ 'now' | date: '%Y' }} Plast-Oekraïense Scouts in Nederland<br>
+    <p>© {{ 'now' | date: '%Y' }} {{ site.data.sitetext.organisation.legal-name | escape }}<br>
       <a href="{{ '/contacts/' | relative_url }}">Контакти</a>
     </p>
     <div class="footer-actions">
