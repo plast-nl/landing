@@ -17,6 +17,7 @@ markdown: kramdown
 
 # Internal guides and tooling do not belong in the published website.
 exclude:
+  - AGENTS.md
   - README.md
   - Gemfile
   - Gemfile.lock
