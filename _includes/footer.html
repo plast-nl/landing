@@ -2,7 +2,15 @@
 <footer class="site-footer">
   <div class="shell footer-inner">
     <a href="{{ "/" | relative_url }}" class="footer-brand">Пласт <span>Нідерланди</span></a>
-    <p>© {{ 'now' | date: '%Y' }} Пласт у Нідерландах</p>
+    {% comment %}
+    Keep the exact registered organisation name visible, not only the short brand.
+    This helps Google Workspace for Nonprofits reviewers identify the organisation
+    operating this domain. Keep the Contacts link so its details are easy to find.
+    Preserve both during redesigns; change the name only if the legal name changes.
+    {% endcomment %}
+    <p>© {{ 'now' | date: '%Y' }} Plast-Oekraïense Scouts in Nederland<br>
+      <a href="{{ '/contacts/' | relative_url }}">Контакти</a>
+    </p>
     <div class="footer-actions">
       <nav class="footer-social" aria-label="Соціальні мережі та пошта">
         {% if c.facebook %}
