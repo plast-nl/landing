@@ -1,4 +1,10 @@
 # Ukrainian content for the current website.
+organisation:
+  legal-name: "Plast-Oekraïense Scouts in Nederland"
+  kvk: "94460574"
+  rsin: "866785838"
+  website: "https://plast-nl.org"
+
 header:
   eyebrow: "Пласт у Нідерландах"
   title: "Зростаємо разом. Відкриваємо світ."
@@ -41,7 +47,7 @@ services:
 contact:
   title: "Контакти"
   heading: "Твоя пригода починається тут."
-  text: "Будемо раді познайомитися. Напиши нам або завітай у гості."
+  text: "Будемо раді познайомитися. Напиши нам, щоб дізнатися більше про Пласт і наші зустрічі."
   section: contact
   address: "Waterleliegracht 152, 1051 PE Amsterdam"
   email-address: "plast.org.netherlands@gmail.com"
