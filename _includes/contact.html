@@ -1,4 +1,5 @@
 {% assign c = site.data.sitetext.contact %}
+{% assign org = site.data.sitetext.organisation %}
 <section class="contact section-space" id="{{ c.section | default: 'contact' }}" aria-labelledby="contact-title">
   <div class="shell contact-grid">
     <div class="contact-copy">
@@ -7,23 +8,13 @@
       <p>{{ c.text }}</p>
       <a class="button" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}">Написати нам <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
     </div>
-    <address class="contact-details">
+    <div class="contact-details">
       {% if c.email-address %}
       <div class="contact-row">
         <span class="contact-label">Електронна пошта</span>
         <div class="contact-value">
           <a href="mailto:{{ c.email-address }}">{{ c.email-address }} <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
           {% include copy-button.html value=c.email-address label='Скопіювати електронну пошту' %}
-        </div>
-        <span class="copy-status" role="status" aria-live="polite"></span>
-      </div>
-      {% endif %}
-      {% if c.address %}
-      <div class="contact-row">
-        <span class="contact-label">Наша адреса</span>
-        <div class="contact-value">
-          <a href="https://www.google.com/maps/search/?api=1&query={{ c.address | url_encode }}" target="_blank" rel="noopener">{{ c.address }} <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
-          {% include copy-button.html value=c.address label='Скопіювати адресу' %}
         </div>
         <span class="copy-status" role="status" aria-live="polite"></span>
       </div>
@@ -41,6 +32,39 @@
         <span class="copy-status" role="status" aria-live="polite"></span>
       </div>
       {% endif %}
-    </address>
+    </div>
+  </div>
+</section>
+{% comment %}
+Keep these registered details public so reviewers can match this domain
+to the organisation's Google for Nonprofits application. KvK and RSIN
+are registration identifiers, not a claim of ANBI status.
+{% endcomment %}
+<section class="registration-details section-space" id="registration" aria-labelledby="registration-title">
+  <div class="shell">
+    <h2 id="registration-title">Реєстраційні дані</h2>
+    <dl>
+      <div class="registration-row">
+        <dt>Назва:</dt>
+        <dd>{{ org.legal-name | escape }}</dd>
+      </div>
+      <div class="registration-row">
+        <dt>KVK:</dt>
+        <dd>{{ org.kvk | escape }}</dd>
+      </div>
+      <div class="registration-row">
+        <dt>RSIN:</dt>
+        <dd>{{ org.rsin | escape }}</dd>
+      </div>
+      {% if c.address %}
+      <div class="registration-row">
+        <dt>Реєстраційна адреса:</dt>
+        <dd>{{ c.address | escape }}</dd>
+      </div>
+      {% endif %}
+    </dl>
+    {% if c.address %}
+    <p class="registration-note">Адреса реєстрації, не місце проведення зустрічей. Відвідування не передбачені.</p>
+    {% endif %}
   </div>
 </section>
