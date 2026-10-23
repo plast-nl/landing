@@ -358,7 +358,8 @@ button:focus-visible {
   color: #e0e9df;
   max-width: 330px;
 } /* Contacts */
-.contact {
+.contact,
+.registration-details {
   background: #efeadd;
 }
 .contact-grid {
@@ -382,6 +383,40 @@ button:focus-visible {
   padding-top: 8px;
   min-width: 0;
 }
+.registration-details {
+  border-top: 1px solid #c6cdbf;
+  scroll-margin-top: 120px;
+}
+.registration-details h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+.registration-details dl,
+.registration-details dd {
+  margin: 0;
+}
+.registration-details dl {
+  display: grid;
+  gap: 12px;
+  line-height: 1.5;
+}
+.registration-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.35em;
+}
+.registration-row dt {
+  color: var(--muted);
+  font-weight: 400;
+}
+.registration-details dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.registration-note {
+  margin-top: 10px;
+  color: var(--muted);
+}
 .contact-row {
   border-bottom: 1px solid #c6cdbf;
   padding: 22px 0;
@@ -397,9 +432,12 @@ button:focus-visible {
   color: var(--muted);
   margin-bottom: 9px;
 }
-.contact-row a {
+.contact-row a,
+.registration-details dd {
   font-size: clamp(16px, 1.8vw, 21px);
   line-height: 1.5;
+}
+.contact-row a {
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -1024,8 +1062,11 @@ button:focus-visible {
   .contact-details {
     padding-top: 10px;
   }
-  .contact-row a {
+  .contact-row a,
+  .registration-details dd {
     font-size: 17px;
+  }
+  .contact-row a {
     gap: 10px;
   }
   .contact-row {
