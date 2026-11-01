@@ -72,7 +72,8 @@ function initBackToTop() {
 
 function initCopyButtons() {
   document.querySelectorAll("[data-copy]").forEach((button) => {
-    const status = button.closest(".contact-row").querySelector(".copy-status");
+    const status = button.closest("[data-copy-scope]")?.querySelector(".copy-status");
+    if (!status) return;
     let resetTimer;
     button.hidden = false;
     button.addEventListener("click", async () => {

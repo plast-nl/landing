@@ -780,6 +780,15 @@ button:focus-visible {
   grid-column: 2;
   grid-row: 1 / span 2;
 }
+.groups-join-button-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.groups-join-button-row .button {
+  flex: 1 1 auto;
+}
 .groups-join .join-city-status {
   font-size: 13px;
   margin: 0 0 12px;
@@ -1093,8 +1102,8 @@ button:focus-visible {
   .groups-join-actions {
     width: 100%;
   }
-  .groups-join-actions .button {
-    width: 100%;
+  .groups-join-button-row .button {
+    width: auto;
   }
 }
 @media (prefers-reduced-motion: reduce) {

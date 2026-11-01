@@ -9,7 +9,7 @@
     </div>
     <address class="contact-details">
       {% if c.email-address %}
-      <div class="contact-row">
+      <div class="contact-row" data-copy-scope>
         <span class="contact-label">Електронна пошта</span>
         <div class="contact-value">
           <a href="mailto:{{ c.email-address }}">{{ c.email-address }} <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
@@ -19,7 +19,7 @@
       </div>
       {% endif %}
       {% if c.address %}
-      <div class="contact-row">
+      <div class="contact-row" data-copy-scope>
         <span class="contact-label">Наша адреса</span>
         <div class="contact-value">
           <a href="https://www.google.com/maps/search/?api=1&query={{ c.address | url_encode }}" target="_blank" rel="noopener">{{ c.address }} <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
@@ -29,7 +29,7 @@
       </div>
       {% endif %}
       {% if c.facebook %}
-      <div class="contact-row">
+      <div class="contact-row" data-copy-scope>
         <span class="contact-label">Життя спільноти</span>
         <div class="contact-value">
           <a href="{{ c.facebook }}" target="_blank" rel="noopener" aria-label="Пласт Нідерланди у Facebook">

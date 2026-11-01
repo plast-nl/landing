@@ -32,9 +32,13 @@ permalink: /oseredky/
         <p class="eyebrow">Наступний крок</p>
         <h2 id="groups-help-title">Бажаєте долучитися до Пласту?</h2>
       </div>
-      <div class="groups-join-actions">
+      <div class="groups-join-actions" data-copy-scope>
         <p class="join-city-status" role="status" aria-live="polite" hidden></p>
-        <a class="button" id="group-join-email" data-email="{{ c.email-address | escape }}" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}" aria-describedby="join-email-note">Написати нам <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
+        <div class="groups-join-button-row">
+          <a class="button" id="group-join-email" data-email="{{ c.email-address | escape }}" href="mailto:{{ c.email-address }}?subject={{ 'Хочу долучитися до Пласту' | url_encode | replace: '+', '%20' }}" aria-describedby="join-email-note">Написати нам <span aria-hidden="true">{% include icon.html name='external' %}</span></a>
+          {% include copy-button.html value=c.email-address label='Скопіювати електронну пошту' %}
+        </div>
+        <span class="copy-status" role="status" aria-live="polite"></span>
         <p class="join-email-note" id="join-email-note">Відкриється ваша поштова програма.</p>
       </div>
       <div class="groups-join-copy">
