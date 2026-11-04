@@ -1,0 +1,130 @@
+.people-page h1 {
+  max-width: none;
+}
+.people-preview-notice {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 18px;
+}
+.people-section {
+  margin-top: 64px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+.people-section-heading {
+  margin-bottom: 30px;
+}
+.people-section-heading .eyebrow {
+  display: block;
+  margin-bottom: 14px;
+}
+.people-section-heading h2 {
+  font-size: clamp(30px, 3.7vw, 46px);
+}
+.people-section-note {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 16px;
+}
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.person-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #efeadd;
+  border: 1px solid var(--line);
+  border-radius: 4px 44px 4px 4px;
+  overflow: hidden;
+}
+.person-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  padding: 22px 22px 0;
+}
+.person-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.person-card figcaption {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  padding: 24px;
+}
+.person-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.person-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 14px;
+}
+.person-birth-date,
+.people-calendar-date {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.person-photo-placeholder {
+  color: var(--muted);
+  font-size: 14px;
+}
+.people-page [hidden] {
+  display: none;
+}
+.person-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-top: auto;
+  padding-top: 22px;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.people-calendar {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #e8edde;
+}
+.people-calendar .people-section-heading {
+  margin-bottom: 30px;
+}
+@media (max-width: 991.98px) {
+  .people-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+@media (max-width: 639.98px) {
+  .people-section {
+    margin-top: 42px;
+    padding-top: 26px;
+  }
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+  .person-image {
+    height: 290px;
+  }
+  .people-calendar {
+    padding: 24px;
+  }
+}

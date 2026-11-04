@@ -1,0 +1,49 @@
+---
+layout: site
+title: Постаті Пласту
+permalink: /postati/
+people_preview: true
+---
+<section class="section-space interior-page people-page" aria-labelledby="people-title">
+  <div class="shell">
+    <p class="eyebrow">Історія в обличчях</p>
+    <h1 id="people-title">Постаті Пласту</h1>
+    <p class="page-intro">Відомі пластуни та пластунки, їхні історії та досягнення</p>
+    <section class="people-section" aria-labelledby="founders-title">
+      <div class="people-section-heading">
+        <span class="eyebrow">01 / Початок історії</span>
+        <h2 id="founders-title">Засновники Пласту</h2>
+      </div>
+      <div class="people-grid">
+        {% for person in site.data.people_preview.people limit: 3 %}
+          {% include people-preview.html person=person %}
+        {% endfor %}
+      </div>
+    </section>
+    <section class="people-section" aria-labelledby="featured-people-title" data-people-preview data-baseurl="{{ site.baseurl | escape }}">
+      <div class="people-section-heading">
+        <span class="eyebrow">02 / Історії та досягнення</span>
+        <h2 id="featured-people-title">Знайомимося ближче</h2>
+      </div>
+      <div class="people-grid">
+        {% assign people_with_photos = site.data.people_preview.people | where_exp: 'person', 'person.image != empty' | where_exp: 'person', 'person.description != empty' %}
+        {% for person in people_with_photos offset: 3 limit: 3 %}
+          {% include people-preview.html person=person rotating=true %}
+        {% endfor %}
+      </div>
+    </section>
+    <section class="people-section people-calendar" aria-labelledby="birthday-title" data-birthday-calendar data-baseurl="{{ site.baseurl | escape }}" hidden>
+      <div class="people-section-heading">
+        <span class="eyebrow">03 / Пластовий календар</span>
+        <h2 id="birthday-title">Цього дня народилися</h2>
+        <p class="people-calendar-date" data-calendar-date></p>
+      </div>
+      <div class="people-grid" data-birthday-cards></div>
+    </section>
+  </div>
+</section>
+<template id="person-card-template">
+  {% include people-preview.html person=site.data.people_preview.people.first %}
+</template>
+<script type="application/json" id="people-preview-data">{{ site.data.people_preview.people | jsonify | replace: '</', '<\/' }}</script>
+<script src="{{ '/assets/js/people-preview.js' | relative_url }}" defer></script>

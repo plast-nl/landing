@@ -1,0 +1,13 @@
+{% assign person = include.person %}
+<figure class="person-card"{% if include.rotating %} data-person-card{% endif %}>
+  <div class="person-image">
+    <img data-person-image src="{{ person.image | relative_url }}" alt="{{ person.name | escape }}" width="{{ person.image_width }}" height="{{ person.image_height }}" loading="lazy">
+    <span class="person-photo-placeholder" data-person-photo-placeholder hidden>Фото ще не додано</span>
+  </div>
+  <figcaption>
+    <h3 data-person-name>{{ person.name | escape }}</h3>
+    <span class="person-birth-date" data-person-birth-date{% if person.birth_date == empty %} hidden{% endif %}>{{ person.birth_date | date: '%d.%m.%Y' }}{% if person.death_date and person.death_date != empty %} – {% assign death_date_length = person.death_date | size %}{% if death_date_length == 4 %}{{ person.death_date }}{% else %}{{ person.death_date | date: '%d.%m.%Y' }}{% endif %}{% endif %}</span>
+    <p class="person-description" data-person-description{% if person.description == empty %} hidden{% endif %}>{{ person.description | escape }}</p>
+    <a class="person-source" data-person-source href="{{ person.description_source_url | default: person.source_url | escape }}" target="_blank" rel="noopener">Джерело {% include icon.html name='external' %}</a>
+  </figcaption>
+</figure>

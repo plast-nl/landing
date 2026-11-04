@@ -1,5 +1,6 @@
 # Jekyll build output and cache
 _site/
+_site-people-preview/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/

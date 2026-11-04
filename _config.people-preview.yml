@@ -1,0 +1,14 @@
+# Local prototype: bundle exec jekyll serve --config _config.yml,_config.people-preview.yml --port 4001
+people_preview: true
+destination: _site-people-preview
+exclude:
+  - AGENTS.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - output/
+  - tmp/
+  - _site/
+  - _site-people-preview/

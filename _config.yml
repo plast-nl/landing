@@ -8,6 +8,7 @@ description: >-
   Пласт — Oekraïense Scouts in Nederland. Українська скаутська організація
   в Нідерландах: виховання, табори, мандрівки та українська спільнота.
 lang: uk
+people_preview: false
 
 logo:
   path: assets/img/plast-nl-logo.svg
@@ -25,3 +26,8 @@ exclude:
   - .bundle/
   - output/
   - tmp/
+  - _site-people-preview/
+  - assets/img/people-preview/
+  - assets/css/people-preview.css
+  - assets/js/people-preview.js
+  - people.html
